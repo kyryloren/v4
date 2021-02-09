@@ -4,8 +4,6 @@ import { graphql } from 'gatsby';
 import { Hero, About, Images } from '@components/projects';
 
 const ProjectPage = ({ images, project }) => {
-  console.log(images);
-
   return (
     <>
       <div data-scroll-section>
