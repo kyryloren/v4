@@ -15,7 +15,7 @@
 </p>
 <p align="center">
   <a href="https://app.netlify.com/sites/kyrylo-v4/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/e98b92c3-645c-4dff-b533-68f516962dc8/deploy-status" alt="Netlify status" />
+    <img src="https://api.netlify.com/api/v1/badges/3c3e3e3b-6a41-4445-8c27-b86edb23e837/deploy-status" alt="Netlify status" />
   </a>
 </p>
 
