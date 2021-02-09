@@ -1,0 +1,153 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Title",
+        "placeholder": "Project title"
+      }
+    },
+    "thumb_title": {
+      "type": "Text",
+      "config": {
+        "label": "Thumb_title",
+        "placeholder": "Thumbnail title"
+      }
+    },
+    "thumbnail": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Thumbnail"
+      }
+    },
+    "tags": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "tag": {
+            "type": "Text",
+            "config": {
+              "label": "Tag",
+              "placeholder": "Tag"
+            }
+          }
+        },
+        "label": "Tags"
+      }
+    },
+    "title": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "row": {
+            "type": "Text",
+            "config": {
+              "label": "Row",
+              "placeholder": "Row"
+            }
+          }
+        },
+        "label": "Title"
+      }
+    },
+    "hero": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Hero"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Description",
+        "placeholder": "Description"
+      }
+    },
+    "services": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "service": {
+            "type": "Text",
+            "config": {
+              "label": "Service",
+              "placeholder": "Service"
+            }
+          }
+        },
+        "label": "Services"
+      }
+    },
+    "live": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Live",
+        "placeholder": "Live website"
+      }
+    },
+    "challenge": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "text": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, strong, em",
+              "label": "Text",
+              "placeholder": "Text"
+            }
+          }
+        },
+        "label": "Challenge",
+        "repeat": false
+      }
+    },
+    "approach": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "text": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, strong, em",
+              "label": "Text",
+              "placeholder": "Text"
+            }
+          }
+        },
+        "label": "Approach",
+        "repeat": false
+      }
+    },
+    "screenshots": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "image": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Image"
+            }
+          }
+        },
+        "label": "Screenshots"
+      }
+    },
+    "result": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em",
+        "label": "Result",
+        "placeholder": "Result"
+      }
+    }
+  }
+}

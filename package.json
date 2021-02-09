@@ -1,44 +1,55 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "@kyryloren/portfolio-v5",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "I am a passionate software developer and UI/UX designer based in New York. I have a drive for building high quality, polished user experiences, and working as a leader to deliver the best results possible.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Kyrylo Orlov <dev@kyryloorlov.com>",
   "dependencies": {
+    "babel-plugin-styled-components": "^1.12.0",
+    "classnames": "^2.2.6",
+    "framer-motion": "^3.3.0",
     "gatsby": "^2.31.1",
+    "gatsby-background-image": "^1.4.1",
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-manifest": "^2.11.0",
     "gatsby-plugin-offline": "^3.9.0",
     "gatsby-plugin-react-helmet": "^3.9.0",
-    "gatsby-plugin-sharp": "^2.13.2",
+    "gatsby-plugin-robots-txt": "^1.5.5",
+    "gatsby-plugin-sharp": "^2.14.1",
+    "gatsby-plugin-sitemap": "^2.12.0",
+    "gatsby-plugin-styled-components": "^3.10.0",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.10.0",
+    "gatsby-source-prismic": "^3.3.3",
     "gatsby-transformer-sharp": "^2.11.0",
+    "intersection-observer": "^0.12.0",
+    "locomotive-scroll": "^4.0.6",
+    "prismic-reactjs": "^1.3.3",
+    "prismic-richtext": "^1.0.3",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "styled-components": "^5.2.1",
+    "terser": "^4.8.0"
   },
   "devDependencies": {
     "prettier": "2.2.1"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
+  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "clean": "gatsby clean"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/kyrylore/portfolio-v5"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/kyrylore/portfolio-v5/issues"
   }
 }

@@ -1,14 +1,40 @@
-import React from "react"
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import styled from 'styled-components';
+import { Section } from '@styles';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+const StyledMainContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 30rem;
+  flex-direction: column;
+`;
+const StyledTitle = styled.h1`
+  font-size: clamp(100px, 25vw, 200px);
+  line-height: 1;
+`;
+const StyledSubtitle = styled.h2`
+  font-size: clamp(30px, 5vw, 50px);
+  font-weight: 400;
+`;
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>404: Not Found</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-)
+const NotFoundPage = () => {
+  return (
+    <>
+      <Helmet title="Page Not Found" />
 
-export default NotFoundPage
+      <div data-scroll-section>
+        <Section>
+          <StyledMainContainer>
+            <StyledTitle>404</StyledTitle>
+            <StyledSubtitle>Page Not Found</StyledSubtitle>
+          </StyledMainContainer>
+        </Section>
+      </div>
+    </>
+  );
+};
+
+export default NotFoundPage;

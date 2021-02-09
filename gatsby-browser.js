@@ -1,7 +1,14 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import React from 'react';
+import { Layout } from './src/components';
+import './src/styles/scroll.css';
 
-// You can delete this file if you're not using it
+export const onClientEntry = () => {
+  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+  if (!(`IntersectionObserver` in window)) {
+    return import(`intersection-observer`);
+  }
+};
+
+export const wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>;
+};
