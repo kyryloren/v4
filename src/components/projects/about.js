@@ -45,9 +45,14 @@ const AboutText = styled.p`
 const Paragraphs = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4vw;
+
+  ${props => props.margin && media.tablet`margin-top: 8vw;`}
+  ${props => props.margin && media.thone`margin-top: 12vw;`}
+`;
+const ApproachCol = styled.div`
+  margin-top: 5vw;
+
   ${media.tablet`margin-top: 8vw;`};
-  ${media.thone`margin-top: 15vw;`};
 `;
 const InformationText = styled.p`
   color: var(--text);
@@ -60,6 +65,9 @@ const BiggerText = styled(InformationText)`
   font-size: 1.7vw;
   line-height: 120%;
   margin: 0;
+
+  ${media.desktop`font-size: 1.6vw;`};
+  ${media.tablet`font-size: 18px;`};
 `;
 
 var aboutSerializer = function (type, element, content, children) {
@@ -94,15 +102,15 @@ const About = ({ description, services, site, challenge, approach, result }) => 
           </ContentWrapper>
         </Col>
         <Col rest>
-          <Paragraphs>
+          <Paragraphs margin>
             <div>
               <Marquee>Challenge</Marquee>
               <RichText render={challenge.raw} htmlSerializer={infoSerializer} />
             </div>
-            <div>
+            <ApproachCol>
               <Marquee>Approach</Marquee>
               <RichText render={approach.raw} htmlSerializer={infoSerializer} />
-            </div>
+            </ApproachCol>
           </Paragraphs>
         </Col>
       </Row>

@@ -19,13 +19,20 @@ const ProjectsWrapper = styled.div`
 const Project = styled(Link)`
   display: flex;
   flex-direction: column;
+
   :nth-child(2n) {
     margin-top: 6vw;
+
+    ${media.tablet`margin-top: 0;`};
   }
 
   ${media.tablet`
     width: 100%!important;
     flex-direction: column-reverse;
+
+    :not(:first-child) {
+      margin-top: 8vw;
+    }
   `};
 `;
 const ImageContainer = styled(motion.div)`
@@ -54,7 +61,7 @@ const ProjectTitle = styled.p`
   color: var(--text);
   font-family: var(--font-family-serif);
   font-size: 1.3vw;
-  line-height: 80%;
+  line-height: 90%;
   font-weight: 600;
   text-transform: uppercase;
   margin-top: 1.6vw;

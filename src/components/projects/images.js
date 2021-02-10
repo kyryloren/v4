@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import { Section } from '@styles';
+import { Section, media } from '@styles';
 
 const ImageSection = styled(Section)`
   position: relative;
@@ -21,6 +21,8 @@ const RandomImageContainer = styled.div`
 const RandomImage = styled(Img)`
   position: relative;
   width: 70%;
+
+  ${media.tablet`width: 100%;`};
 `;
 
 const Images = ({ images }) => {

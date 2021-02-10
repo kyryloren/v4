@@ -27,7 +27,6 @@ const Noise = css`
     position: fixed;
     top: -100%;
     width: 300%;
-    backdrop-filter: invert(1);
   }
 `;
 

@@ -11,7 +11,7 @@ export const DisplayTitle = styled(motion.h1)`
   text-transform: uppercase;
   font-family: var(--font-family-serif);
 
-  ${media.tablet`font-size: 12.7vw;`};
+  ${media.tablet`font-size: 12.5vw;`};
 `;
 export const DefaultText = styled.p`
   font-size: 1.8vw;
