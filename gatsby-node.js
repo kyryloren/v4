@@ -1,8 +1,7 @@
 const path = require('path');
 const sharp = require('sharp');
 
-sharp.cache(false);
-sharp.simd(true);
+sharp.concurrency(1);
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
