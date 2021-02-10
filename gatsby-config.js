@@ -1,6 +1,4 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -21,8 +19,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: `${process.env.GATSBY_PRISMIC_REPO}`,
-        accessToken: `${process.env.GATSBY_PRISMIC_API}`,
+        repositoryName: process.env.GATSBY_PRISMIC_REPO,
+        accessToken: process.env.GATSBY_PRISMIC_API,
         lang: '*',
         shouldDownloadImage: () => {
           return true;
