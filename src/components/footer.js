@@ -6,7 +6,7 @@ import styled from 'styled-components';
 const FixedWrapper = styled.div`
   position: fixed;
   width: 100%;
-  top: 93vh;
+  top: 90vh;
   z-index: 11;
 
   ${media.thone`
