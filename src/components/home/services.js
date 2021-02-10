@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { IconExternal } from '@components';
 import { Section, Overflow, media } from '@styles';
+import { useInView } from 'react-intersection-observer';
 
 const CustomSection = styled(Section)`
   padding-top: 10vh;
@@ -46,7 +47,7 @@ const Title = styled.span`
 
   ${media.tablet`font-size: 8vw;`};
 `;
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -151,20 +152,22 @@ const Accordion = ({ details, expanded, setExpanded }) => {
 
 const Services = () => {
   const [expanded, setExpanded] = useState(0);
+  const [servicesRef, inView] = useInView({ threshold: 0.1 });
 
   return (
-    <CustomSection>
+    <CustomSection ref={servicesRef}>
       <Overflow>
         <CustomTitle
           initial={{ y: '200%' }}
-          animate={{
-            y: 0,
-            transition: {
-              ease: [0.6, 0.05, -0.01, 0.9],
-              duration: 1,
-              delay: 0.4,
-            },
-          }}>
+          animate={
+            inView && {
+              y: 0,
+              transition: {
+                ease: [0.6, 0.05, -0.01, 0.9],
+                duration: 1,
+              },
+            }
+          }>
           I work with companies
         </CustomTitle>
       </Overflow>
@@ -172,14 +175,16 @@ const Services = () => {
         <Line1>
           <CustomTitle
             initial={{ y: '200%' }}
-            animate={{
-              y: 0,
-              transition: {
-                ease: [0.6, 0.05, -0.01, 0.9],
-                duration: 1,
-                delay: 0.8,
-              },
-            }}>
+            animate={
+              inView && {
+                y: 0,
+                transition: {
+                  ease: [0.6, 0.05, -0.01, 0.9],
+                  duration: 1,
+                  delay: 0.2,
+                },
+              }
+            }>
             and brands as a
           </CustomTitle>
         </Line1>
@@ -187,14 +192,16 @@ const Services = () => {
       <Overflow>
         <CustomTitle
           initial={{ y: '200%' }}
-          animate={{
-            y: 0,
-            transition: {
-              ease: [0.6, 0.05, -0.01, 0.9],
-              duration: 1,
-              delay: 1.2,
-            },
-          }}>
+          animate={
+            inView && {
+              y: 0,
+              transition: {
+                ease: [0.6, 0.05, -0.01, 0.9],
+                duration: 1,
+                delay: 0.4,
+              },
+            }
+          }>
           private specialist on a
         </CustomTitle>
       </Overflow>
@@ -202,19 +209,32 @@ const Services = () => {
         <Line2>
           <CustomTitle
             initial={{ y: '200%' }}
-            animate={{
-              y: 0,
-              transition: {
-                ease: [0.6, 0.05, -0.01, 0.9],
-                duration: 1,
-                delay: 1.6,
-              },
-            }}>
+            animate={
+              inView && {
+                y: 0,
+                transition: {
+                  ease: [0.6, 0.05, -0.01, 0.9],
+                  duration: 1,
+                  delay: 0.6,
+                },
+              }
+            }>
             project basis.
           </CustomTitle>
         </Line2>
       </Overflow>
-      <Wrapper>
+      <Wrapper
+        initial={{ opacity: 0 }}
+        animate={
+          inView && {
+            opacity: 1,
+            transition: {
+              ease: [0.6, 0.05, -0.01, 0.9],
+              duration: 1,
+              delay: 0.6,
+            },
+          }
+        }>
         {accordionIds.map((details, index) => (
           <Accordion key={index} details={details} expanded={expanded} setExpanded={setExpanded} />
         ))}

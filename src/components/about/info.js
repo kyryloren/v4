@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import BackgroundImage from 'gatsby-background-image';
-import { Section, DefaultText, media } from '@styles';
+import { useInView } from 'react-intersection-observer';
+import { Section, DefaultText, ImageAnim, media } from '@styles';
 
 const StyledSection = styled(Section)`
   padding-top: 10rem;
@@ -53,9 +54,23 @@ const StyledDefaultText = styled(DefaultText)`
 `;
 
 const Info = ({ data }) => {
+  const [imageRef, inView] = useInView({ threshold: 0.1 });
+
   return (
-    <StyledSection>
+    <StyledSection ref={imageRef}>
       <ImageContainer>
+        <ImageAnim
+          initial={{ height: '100%' }}
+          animate={
+            inView && {
+              height: 0,
+              transition: {
+                ease: [0.6, 0.05, -0.01, 0.9],
+                duration: 1,
+              },
+            }
+          }
+        />
         <StyledImage
           data-scroll
           data-scroll-speed={-1}

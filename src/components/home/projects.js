@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { motion } from 'framer-motion';
 import BackgroundImage from 'gatsby-background-image';
-import { media, Section } from '@styles';
+import { useInView } from 'react-intersection-observer';
+import { media, Section, ImageAnim } from '@styles';
 
 const ProjectSection = styled(Section)`
   padding-top: 0;
@@ -79,8 +80,10 @@ const ProjectCaption = styled.p`
 `;
 
 const Projects = ({ data }) => {
+  const [projectsRef, inView] = useInView({ threshold: 0.1 });
+
   return (
-    <ProjectSection>
+    <ProjectSection ref={projectsRef}>
       <ProjectsWrapper>
         {data.map((object, i) => {
           const uid = object.node.uid;
@@ -90,6 +93,18 @@ const Projects = ({ data }) => {
           return (
             <Project to={`/projects/${uid}`} key={i}>
               <ImageContainer>
+                <ImageAnim
+                  initial={{ height: '100%' }}
+                  animate={
+                    inView && {
+                      height: 0,
+                      transition: {
+                        ease: [0.6, 0.05, -0.01, 0.9],
+                        duration: 1,
+                      },
+                    }
+                  }
+                />
                 <ProjectImage
                   fluid={data.thumbnail.localFile.childImageSharp.fluid}
                   alt={data.thumbnail.alt}
