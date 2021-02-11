@@ -9,7 +9,7 @@ import { Overflow } from '@styles';
 const StyledComeIn = styled(motion.div)`
   background-color: #fff;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   z-index: 9998;
   overflow: hidden;
   user-select: none;
