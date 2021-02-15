@@ -113,7 +113,7 @@ const Contact = () => {
         <Row>
           <LinkCol>
             <li>
-              <Link href="https://instagram.com/kyryloren">Instagram</Link>
+              <Link href="https://instagram.com/kothedesigner">Instagram</Link>
             </li>
             <li>
               <Link href="https://twitter.com/kyryloren">Twitter</Link>
