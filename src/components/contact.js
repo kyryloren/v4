@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { Section, Link, media } from '@styles';
+import { Section, Link, DefaultText, media } from '@styles';
 
 const CustomSection = styled(Section)`
   padding-top: 10vh;
@@ -55,6 +55,7 @@ const Row = styled.div`
 const LinkCol = styled.ul`
   list-style: none;
   padding: 0;
+  margin: 0;
 
   li {
     :not(:first-child) {
@@ -70,15 +71,13 @@ const TextCol = styled.div`
 
   ${media.thone`max-width: 60%;`};
 `;
-const ContactText = styled.p`
+const ContactText = styled(DefaultText)`
   width: 90%;
   margin-left: auto;
   font-size: 0.95vw;
-  font-family: var(--font-family);
   margin-bottom: 2rem;
-  text-transform: uppercase;
 
-  ${media.tablet`font-size: 16px;`};
+  ${media.tablet`font-size: 14px;`};
 `;
 
 const Contact = () => {
@@ -86,7 +85,7 @@ const Contact = () => {
     <CustomSection>
       <MarqueeWrapper
         initial={{ x: '0' }}
-        animate={ { x: '-85%' }}
+        animate={{ x: '-85%' }}
         transition={{ duration: 12, ease: 'linear', repeat: Infinity, delay: 1 }}>
         <CustomTitle>Get in touch</CustomTitle>
         <CustomTitle>Get in touch</CustomTitle>
