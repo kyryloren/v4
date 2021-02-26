@@ -1,6 +1,7 @@
 import React from 'react';
 import { Section, media } from '@styles';
 import { Link } from 'gatsby';
+import { ThemeContext } from '@components';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
@@ -15,6 +16,7 @@ const StyledHeader = styled.header`
 `;
 const StyledContainer = styled(Section)`
   display: flex;
+  overflow: hidden;
   justify-content: space-between;
   align-items: center;
   padding-top: 1.5rem;
@@ -67,12 +69,53 @@ const NavLink = styled(Link)`
 
   ${media.tablet`font-size: 16px;`};
 `;
+const TogglerWrapper = styled.div`
+  z-index: 999;
+
+  label {
+    cursor: pointer;
+
+    input {
+      display: none;
+    }
+    padding: 1rem;
+  }
+`;
+const ButtonToggler = styled.p`
+  color: var(--text);
+  text-transform: uppercase;
+  display: block;
+  font-size: 0.9vw;
+  line-height: 1;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0, 1);
+  opacity: 1;
+  cursor: pointer;
+  :hover {
+    opacity: 0.6;
+  }
+
+  ${media.tablet`font-size: 16px;`};
+`;
 
 const Nav = () => {
+  const { colorMode, setColorMode } = React.useContext(ThemeContext);
+
   return (
     <StyledHeader>
       <StyledContainer>
         <LogoWrapper to="/">Kyrylo Orlov</LogoWrapper>
+        <TogglerWrapper>
+          <label>
+            <input
+              type="checkbox"
+              onChange={ev => {
+                setColorMode(ev.target.checked ? 'dark' : 'light');
+              }}
+              checked={colorMode === 'dark'}
+            />
+            <ButtonToggler>Toggle theme</ButtonToggler>
+          </label>
+        </TogglerWrapper>
         <StyledNav>
           <NavList>
             <NavItem>

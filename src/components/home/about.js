@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { media, DefaultText, Section } from '@styles';
 
 const AboutSection = styled(Section)`
-  padding-top: 10vw;
   padding-bottom: 10vw;
   position: relative;
   overflow-x: hidden;
@@ -15,18 +14,20 @@ const AboutSection = styled(Section)`
   }
 `;
 const Row = styled.div`
-  margin-left: 24.5vw;
-  width: 64vw;
+  display: flex;
+  justify-content: flex-end;
   margin-top: 7.5vw;
   margin-bottom: 7.5vw;
-
-  ${media.tablet`
-    width: 100%;
-    margin-left: 0;
-  `};
 `;
 const StyledDefaultText = styled(DefaultText)`
   text-indent: 100px;
+  max-width: 60vw;
+
+  ${props =>
+    props.smaller &&
+    `
+    max-width: 80vw;
+  `}
 `;
 
 const About = () => {
@@ -40,7 +41,7 @@ const About = () => {
         </StyledDefaultText>
       </Row>
       <Row>
-        <StyledDefaultText>
+        <StyledDefaultText smaller>
           By working closely with company leaders, I’ve been exposed to numerous different business
           models and projects over the years. Acting as a consultant and lead designer for small and
           large teams alike, I've built industry-standard products and gained experiences which have
