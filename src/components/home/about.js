@@ -28,6 +28,8 @@ const StyledDefaultText = styled(DefaultText)`
     `
     max-width: 80vw;
   `}
+
+  ${media.tablet`max-width: 100%;`};
 `;
 
 const About = () => {

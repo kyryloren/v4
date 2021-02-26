@@ -217,7 +217,7 @@ const Hero = ({ data }) => {
         <StyledImage
           data-scroll
           data-scroll-speed={-1}
-          fluid={data.hero.childImageSharp.fluid}
+          fluid={data.childImageSharp.fluid}
           alt="Kyrylo Orlov"
           style={{ position: 'absolute' }}
           critical

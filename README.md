@@ -19,7 +19,7 @@
   </a>
 </p>
 
-![hero](https://i.imgur.com/VUca4Wy.png)
+![hero](https://i.imgur.com/aCTlpax.png)
 
 ## 🚀 Installing
 
