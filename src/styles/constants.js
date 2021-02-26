@@ -1,11 +1,11 @@
 export const COLORS = {
   text: {
-    light: '#171717',
-    dark: '#fcfcfc',
+    light: '#101010',
+    dark: '#E2E2E2',
   },
   background: {
-    light: '#fcfcfc',
-    dark: '#171717',
+    light: '#E2E2E2',
+    dark: '#101010',
   },
   accent: {
     light: '#303030',
