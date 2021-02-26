@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useStaticQuery, graphql } from 'gatsby';
 import { media, Overflow, Section, ImageAnim, DisplayTitle } from '@styles';
 import ScrollDown from '@images/scroll.svg';
 import BackgroundImage from 'gatsby-background-image';
@@ -139,19 +138,7 @@ const SocialLink = styled.a`
   ${media.thone`font-size: 4vw;`};
 `;
 
-const Hero = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "hero.png" }) {
-        childImageSharp {
-          fluid(fit: COVER, maxWidth: 500, quality: 40) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
+const Hero = ({ data }) => {
   return (
     <HeroWrapper>
       <Overflow>
@@ -230,7 +217,7 @@ const Hero = () => {
         <StyledImage
           data-scroll
           data-scroll-speed={-1}
-          fluid={data.file.childImageSharp.fluid}
+          fluid={data.hero.childImageSharp.fluid}
           alt="Kyrylo Orlov"
           style={{ position: 'absolute' }}
           critical

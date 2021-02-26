@@ -3,11 +3,11 @@ import { graphql } from 'gatsby';
 
 import { Hero, About, Projects, Services } from '@components/home';
 
-const HomePage = ({ data }) => {
+const HomePage = ({ data, hero }) => {
   return (
     <>
       <div data-scroll-section>
-        <Hero />
+        <Hero data={hero} />
       </div>
       <div data-scroll-section>
         <About />
@@ -27,7 +27,7 @@ export default ({ data }) => {
 
   if (!docs) return null;
 
-  return <HomePage data={docs} />;
+  return <HomePage data={docs} hero={data.hero} />;
 };
 
 export const query = graphql`
@@ -52,6 +52,13 @@ export const query = graphql`
               tag
             }
           }
+        }
+      }
+    }
+    hero: file(relativePath: { eq: "hero.png" }) {
+      childImageSharp {
+        fluid(fit: COVER, maxWidth: 500, quality: 80) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
         }
       }
     }

@@ -1,7 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import BackgroundImage from 'gatsby-background-image';
-import { useInView } from 'react-intersection-observer';
 import { Section, DefaultText, media } from '@styles';
 
 const StyledSection = styled(Section)`
@@ -33,11 +31,9 @@ const StyledDefaultText = styled(DefaultText)`
   `}
 `;
 
-const Info = ({ data }) => {
-  const [imageRef, inView] = useInView({ threshold: 0.1 });
-
+const Info = () => {
   return (
-    <StyledSection ref={imageRef}>
+    <StyledSection>
       <ContentWrapper>
         <Row>
           <StyledDefaultText>
