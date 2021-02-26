@@ -28,9 +28,6 @@ const Footer = () => {
         <small>
           <StyledText>&copy; {y}</StyledText>
         </small>
-        <small>
-          <StyledText>Hey there</StyledText>
-        </small>
       </StyledFooter>
     </FixedWrapper>
   );

@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { media, Overflow, Section, ImageAnim, DisplayTitle } from '@styles';
-import ScrollDown from '@images/scroll.svg';
 import BackgroundImage from 'gatsby-background-image';
 import styled from 'styled-components';
 
@@ -64,34 +63,6 @@ const StyledImage = styled(BackgroundImage)`
     width: calc(100% - 40px);
     position: relative !important;
     margin: 0 20px 20px;
-  `};
-`;
-const StyledScrollImage = styled(motion.img)`
-  position: absolute;
-  width: 13vw;
-  right: 3vw;
-  top: 90vh;
-  @media (min-width: 1900px) {
-    display: none;
-  }
-  ${media.bigDesktop`
-    width: 19.36vw;
-    right: 0.06vw;
-  `};
-  ${media.tablet`
-    width: 20vw;
-    top: 90vh;
-    right: -4.94vw;
-  `};
-  ${media.thone`
-    width: 160px;
-    top: 85vh;
-    left: -13.472vw;
-  `};
-  ${media.phone`
-    width: 130px;
-    top: 85vh;
-    left: -23vw;
   `};
 `;
 const LinksWrapper = styled(motion.div)`
@@ -264,12 +235,6 @@ const Hero = ({ data }) => {
           </SocialLink>
         </Col>
       </LinksWrapper>
-      <StyledScrollImage
-        src={ScrollDown}
-        alt="Scroll down!"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-      />
     </HeroWrapper>
   );
 };
