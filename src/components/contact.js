@@ -123,6 +123,9 @@ const Contact = () => {
             <li>
               <Link href="https://dribbble.com/kyryloren">Dribbble</Link>
             </li>
+            <li>
+              <Link href="https://github.com/kyryloren">GitHub</Link>
+            </li>
           </LinkCol>
           <TextCol>
             <ContactText>

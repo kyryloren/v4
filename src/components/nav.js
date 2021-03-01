@@ -1,7 +1,7 @@
 import React from 'react';
 import { Section, media } from '@styles';
 import { Link } from 'gatsby';
-import { ThemeContext } from '@components';
+import { ThemeContext, Toggle } from '@components';
 import styled from 'styled-components';
 
 const StyledHeader = styled.header`
@@ -80,21 +80,12 @@ const TogglerWrapper = styled.div`
     }
     padding: 1rem;
   }
-`;
-const ButtonToggler = styled.p`
-  color: var(--text);
-  text-transform: uppercase;
-  display: block;
-  font-size: 0.9vw;
-  line-height: 1;
-  transition: opacity 0.3s cubic-bezier(0.4, 0, 0, 1);
-  opacity: 1;
-  cursor: pointer;
-  :hover {
-    opacity: 0.6;
-  }
 
-  ${media.tablet`font-size: 16px;`};
+  svg {
+    width: 1rem;
+    height: 1rem;
+    color: var(--text);
+  }
 `;
 
 const Nav = () => {
@@ -113,7 +104,7 @@ const Nav = () => {
               }}
               checked={colorMode === 'dark'}
             />
-            <ButtonToggler>Toggle theme</ButtonToggler>
+            {colorMode === 'dark' ? <Toggle name="sun" /> : <Toggle name="moon" />}
           </label>
         </TogglerWrapper>
         <StyledNav>
