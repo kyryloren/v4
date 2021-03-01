@@ -12,6 +12,11 @@ const AboutSection = styled(Section)`
 
     ${media.tablet`margin-left: 0;`};
   }
+
+  ${media.thone`
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  `};
 `;
 const Row = styled.div`
   display: flex;

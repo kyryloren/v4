@@ -8,16 +8,13 @@ const HeroWrapper = styled(Section)`
   padding-top: 15vw;
   position: relative;
   user-select: none;
-
-  ${media.thone`padding-bottom: 45vw;`};
 `;
 const FlexWrapper = styled.div`
   text-align: right;
-  margin-right: 7vw;
   z-index: -1;
 `;
 const Title = styled(DisplayTitle)`
-  font-size: ${props => (props.smaller ? '10.9vw' : '13vw')};
+  font-size: ${props => (props.smaller ? '10.9vw' : '12.9vw')};
 
   span {
     font-size: 4vw;
@@ -25,7 +22,10 @@ const Title = styled(DisplayTitle)`
     font-style: italic;
     line-height: 0;
 
-    ${media.tablet`font-size: 6vw;`};
+    ${media.tablet`
+      font-size: 4vw;
+      margin-right: 1vw;
+    `};
   }
   ${media.desktop`font-size: 12.5vw;`};
 `;
@@ -43,10 +43,8 @@ const ImageContainer = styled.div`
     position: relative;
   `};
   ${media.thone`
-    height: 60vh;
-    min-height: 500px;
+    height: 50vh;
     width: 100%;
-    position: relative;
   `};
 `;
 const StyledImage = styled(BackgroundImage)`
@@ -65,34 +63,42 @@ const StyledImage = styled(BackgroundImage)`
     margin: 0 20px 20px;
   `};
 `;
-const LinksWrapper = styled(motion.div)`
-  position: relative;
-  top: -30vw;
-  right: -50vw;
+const InfoWrapepr = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 5vw;
-  width: 0;
-  ${media.tablet`
-    top: -60vw;
-    right: -65vw;
+  align-items: center;
+
+  ${media.thone`
     flex-direction: column;
-    gap: 3vw;
+    margin: 0 20px;
+  `};
+`;
+const LinksWrapper = styled(motion.div)`
+  margin-left: 3vw;
+  display: flex;
+  flex-direction: column;
+
+  ${media.tablet`
+    margin-left: 1vw;
   `};
   ${media.thone`
-    top: 0;
-    right: -25vw;
+    margin-left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
   `};
 `;
 const Col = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  margin-top: 1.5vw;
 `;
 const LinkLabel = styled.p`
   font-size: 1vw;
   text-transform: uppercase;
   color: var(--accent);
+  margin: 0;
+
   ${media.tablet`font-size: 1.5vw;`};
   ${media.thone`
     margin-bottom: 3px;
@@ -105,6 +111,8 @@ const SocialLink = styled.a`
   font-style: italic;
   text-transform: uppercase;
   font-size: 1.2vw;
+  margin-top: 0.3vw;
+
   ${media.tablet`font-size: 2vw;`};
   ${media.thone`font-size: 4vw;`};
 `;
@@ -173,68 +181,70 @@ const Hero = ({ data }) => {
           </Title>
         </Overflow>
       </FlexWrapper>
-      <ImageContainer>
-        <ImageAnim
-          initial={{ height: '100%' }}
+      <InfoWrapepr>
+        <ImageContainer>
+          <ImageAnim
+            initial={{ height: '100%' }}
+            animate={{
+              height: 0,
+              transition: {
+                ease: [0.6, 0.05, -0.01, 0.9],
+                duration: 0.8,
+                delay: 0.8,
+              },
+            }}
+          />
+          <StyledImage
+            data-scroll
+            data-scroll-speed={-1}
+            fluid={data.childImageSharp.fluid}
+            alt="Kyrylo Orlov"
+            style={{ position: 'absolute' }}
+            critical
+          />
+        </ImageContainer>
+        <LinksWrapper
+          initial={{ opacity: 0 }}
           animate={{
-            height: 0,
+            opacity: 1,
             transition: {
               ease: [0.6, 0.05, -0.01, 0.9],
-              duration: 0.8,
-              delay: 0.8,
+              duration: 1.5,
+              delay: 0.6,
             },
-          }}
-        />
-        <StyledImage
-          data-scroll
-          data-scroll-speed={-1}
-          fluid={data.childImageSharp.fluid}
-          alt="Kyrylo Orlov"
-          style={{ position: 'absolute' }}
-          critical
-        />
-      </ImageContainer>
-      <LinksWrapper
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: 1,
-          transition: {
-            ease: [0.6, 0.05, -0.01, 0.9],
-            duration: 1.5,
-            delay: 0.6,
-          },
-        }}>
-        <Col>
-          <LinkLabel>Socials</LinkLabel>
-          <SocialLink
-            href="https://dribbble.com/kyryloren"
-            target="_blank"
-            rel="noopener noreferrer">
-            Dribbble
-          </SocialLink>
-          <SocialLink
-            href="https://instagram.com/kyryloren"
-            target="_blank"
-            rel="noopener noreferrer">
-            Instagram
-          </SocialLink>
-          <SocialLink
-            href="https://twitter.com/kyryloren"
-            target="_blank"
-            rel="noopener noreferrer">
-            Twitter
-          </SocialLink>
-        </Col>
-        <Col>
-          <LinkLabel>Contact</LinkLabel>
-          <SocialLink
-            href={`mailto:dev@kyryloorlov.com?subject=Let's make something cool`}
-            target="_blank"
-            rel="nofollow noopener noreferrer">
-            dev@kyryloorlov.com
-          </SocialLink>
-        </Col>
-      </LinksWrapper>
+          }}>
+          <Col>
+            <LinkLabel>Socials</LinkLabel>
+            <SocialLink
+              href="https://dribbble.com/kyryloren"
+              target="_blank"
+              rel="noopener noreferrer">
+              Dribbble
+            </SocialLink>
+            <SocialLink
+              href="https://instagram.com/kyryloren"
+              target="_blank"
+              rel="noopener noreferrer">
+              Instagram
+            </SocialLink>
+            <SocialLink
+              href="https://twitter.com/kyryloren"
+              target="_blank"
+              rel="noopener noreferrer">
+              Twitter
+            </SocialLink>
+          </Col>
+          <Col>
+            <LinkLabel>Contact</LinkLabel>
+            <SocialLink
+              href={`mailto:dev@kyryloorlov.com?subject=Let's make something cool`}
+              target="_blank"
+              rel="nofollow noopener noreferrer">
+              dev@kyryloorlov.com
+            </SocialLink>
+          </Col>
+        </LinksWrapper>
+      </InfoWrapepr>
     </HeroWrapper>
   );
 };
