@@ -89,6 +89,7 @@ var infoSerializer = function (type, element, content, children) {
 };
 
 const About = ({ description, services, site, challenge, approach, result }) => {
+  console.log(result.raw);
   return (
     <AboutSection>
       <Row>
@@ -115,7 +116,7 @@ const About = ({ description, services, site, challenge, approach, result }) => 
         </Col>
       </Row>
       <Divider />
-      {result && (
+      {result && result.raw[0].text !== '' && (
         <Row>
           <Col>
             <AboutText big>The result</AboutText>

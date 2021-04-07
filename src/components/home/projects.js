@@ -90,6 +90,8 @@ const Projects = ({ data }) => {
           const data = object.node.data;
           const tags = data.tags;
 
+          console.log(uid);
+
           return (
             <Project to={`/projects/${uid}`} key={i}>
               <ImageContainer>
@@ -108,7 +110,12 @@ const Projects = ({ data }) => {
                 <ProjectImage
                   fluid={data.thumbnail.localFile.childImageSharp.fluid}
                   alt={data.thumbnail.alt}
-                  style={i === 0 && { backgroundSize: 'contain', backgroundColor: '#dcdcdc' }}
+                  style={
+                    (uid === 'code' || uid === 'stigma') && {
+                      backgroundSize: 'contain',
+                      backgroundColor: '#dcdcdc',
+                    }
+                  }
                 />
               </ImageContainer>
               <div>

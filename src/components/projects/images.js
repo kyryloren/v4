@@ -5,6 +5,7 @@ import { Section, media } from '@styles';
 
 const ImageSection = styled(Section)`
   position: relative;
+  overflow: hidden;
   padding-top: 10vw;
   padding-bottom: 10vw;
 `;
