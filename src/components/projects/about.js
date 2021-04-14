@@ -89,7 +89,6 @@ var infoSerializer = function (type, element, content, children) {
 };
 
 const About = ({ description, services, site, challenge, approach, result }) => {
-  console.log(result.raw);
   return (
     <AboutSection>
       <Row>

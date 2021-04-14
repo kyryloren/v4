@@ -90,8 +90,6 @@ const Projects = ({ data }) => {
           const data = object.node.data;
           const tags = data.tags;
 
-          console.log(uid);
-
           return (
             <Project to={`/projects/${uid}`} key={i}>
               <ImageContainer>
